@@ -1,1 +1,70 @@
 /*  your css code here. If applicable */
+ body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial;
+}
+
+.container{
+    text-align:center;
+}
+
+.progress-container{
+    display:flex;
+    justify-content:space-between;
+    position:relative;
+    width:400px;
+    margin-bottom:30px;
+}
+
+.progress-container::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+    height:4px;
+    width:100%;
+    background-color:lightgray;
+    z-index:-1;
+}
+
+.progress{
+    position:absolute;
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+    height:4px;
+    width:0%;
+    background-color:blue;
+    z-index:-1;
+    transition:0.3s;
+}
+
+.circle{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:3px solid lightgray;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:white;
+}
+
+.circle.active{
+    border-color:blue;
+}
+
+button{
+    padding:10px 20px;
+    margin:5px;
+    cursor:pointer;
+}
+
+button:disabled{
+    cursor:not-allowed;
+    opacity:0.5;
+}
